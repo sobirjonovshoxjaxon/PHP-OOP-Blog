@@ -14,7 +14,7 @@
             $this->database = $database;
             $this->password = $password;
 
-            return $this->connect();
+            $this->connect();
         }
 
         public function connect(){
