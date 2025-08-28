@@ -41,6 +41,7 @@
         public static function create($title,$body){
 
             $statement = self::$pdo->prepare("INSERT INTO posts(title,body) VALUES (:title, :body)");
+            $statement->setFetchMode(PDO::FETCH_CLASS, 'Post');
             $statement->execute([
 
                 'title' => $title,
@@ -49,6 +50,34 @@
             $row = $statement->rowCount(); // rowCount() funksiyasi nechta qator o'zgarganini sanab beradi va 1 qaytaradi
             return $row;
 
+        }
+
+        // Bu methodni vazifasi postni o'zgartirish
+        public static function update($id,$title,$body){
+
+            $statement = self::$pdo->prepare("UPDATE posts SET title = :title, body = :body WHERE id = :id");
+            $statement->setFetchMode(PDO::FETCH_CLASS, 'Post');
+            $statement->execute([
+
+                'id' => $id,
+                'title' => $title,
+                'body' => $body,
+            ]);
+
+            $row = $statement->rowCount();
+            return $row;
+        }
+
+
+        //Bu methodni vazifasi postni id bo'yicha o'chirish
+        public static function delete($id){
+
+            $statement = self::$pdo->prepare("DELETE FROM posts WHERE id = ?");
+            $statement->setFetchMode(PDO::FETCH_CLASS, 'Post');
+            $statement->execute([$id]);
+
+            $row = $statement->rowCount();
+            return $row;
         }
 
 
