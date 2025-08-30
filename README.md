@@ -1,2 +1,2 @@
 # PHP-OOP-Blog
-Bu loyihani qilishimdan maqsad men php oop kursini tugatdim shuningdek  oopni o'rganib bilib oldim va shundan kelib chiqib php oopga oid  loyiha qilishga qaror qildim To'liqroq ma'lumot Readme faylida bor!
+Bu loyihada OOP CRUD qilingan va ma'lumotlar pdo orqali MySQL dan kelib turadi. To'g'ri saytni stilli yaxshimas umaman olganda saytni tashqi ko'rinishiga ahamiyat bermasligingizni hohlayman chunki men Backend dasturchi bo'lib yozgan kodimni sodda tarzda yetkazib bermoqchiman meni ma'lumotlarim Post class orqali kelyapti chunki config/bootstrap.php faylida  Post klassiga bazada kelgan ma'lumotlarni solib qo'yganman. 
